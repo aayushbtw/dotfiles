@@ -1,0 +1,24 @@
+[
+  {
+    "bindings": {
+      "cmd-k": "project_panel::Toggle",
+      "cmd-/": "agent::Toggle",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl--": null,
+      "ctrl-_": null,
+      "ctrl-[": "pane::GoBack",
+      "ctrl-]": "pane::GoForward",
+    },
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "bindings": {
+      "ctrl-]": null,
+      "ctrl-[": null,
+    },
+  },
+]
