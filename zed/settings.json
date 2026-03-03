@@ -38,6 +38,7 @@
   "tab_bar": {
     "show": true,
     "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false,
   },
   "toolbar": {
     "quick_actions": false,
