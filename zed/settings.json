@@ -78,8 +78,8 @@
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_size": 13.5,
   "buffer_line_height": "comfortable",
-  "agent_ui_font_size": 14,
-  "agent_buffer_font_size": 14,
+  "agent_ui_font_size": 15,
+  "agent_buffer_font_size": 13.5,
 
   // Modifiers
   "multi_cursor_modifier": "cmd_or_ctrl",
@@ -96,13 +96,11 @@
   "restore_on_file_reopen": false,
 
   // AI
-  "agent": {
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest",
-      "enable_thinking": false,
+  "agent_servers": {
+    "claude": {
+      "default_config_options": {
+        "model": "opus",
+      },
     },
-    "favorite_models": [],
-    "model_parameters": [],
   },
 }
