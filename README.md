@@ -2,13 +2,14 @@
 
 - [Zed](https://zed.dev)
 - [Ghostty](https://ghostty.org)
+- [Starship](https://starship.rs)
 
 ## Font
 
-I use [Monaspace Neon](https://monaspace.githubnext.com).
+I use [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
 
 ```sh
-brew install --cask font-monaspace
+brew install --cask font-jetbrains-mono
 ```
 
 ## Install
