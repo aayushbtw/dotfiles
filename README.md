@@ -8,10 +8,6 @@
 
 I use [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
 
-```sh
-brew install --cask font-jetbrains-mono
-```
-
 ## Install
 
 ```sh
