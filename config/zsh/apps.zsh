@@ -1,14 +1,6 @@
 export HOMEBREW_NO_ENV_HINTS=1
 
-# bun
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # fnm
-FNM_PATH="$HOME/Library/Application Support/fnm"
-[ -d "$FNM_PATH" ] && export PATH="$FNM_PATH:$PATH"
-
 if has_or_warn fnm; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
