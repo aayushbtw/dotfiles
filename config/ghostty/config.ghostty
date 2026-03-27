@@ -1,0 +1,17 @@
+# Theme
+theme = "Github Dark"
+
+# Fonts
+font-size = 14.5
+font-family = "JetBrains Mono"
+font-feature === "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'liga'",
+
+# Window
+window-padding-x = 7
+window-padding-y = 7
+window-padding-balance = true
+window-decoration = true
+
+# Github Dark - palette 8
+split-divider-color = #4D4D4D 
+unfocused-split-opacity = 0.3
