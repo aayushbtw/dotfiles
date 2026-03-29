@@ -16,8 +16,8 @@ ln -sf "$DOTFILES/config/zsh/apps.zsh" ~/.config/zsh/apps.zsh
 ln -sf "$DOTFILES/config/starship.toml" ~/.config/starship.toml
 
 # Ghostty
-mkdir -p ~/.config/ghostty
-ln -sf "$DOTFILES/config/ghostty/config.ghostty" ~/.config/ghostty/config.ghostty
+[ -d ~/.config/ghostty ] && [ ! -L ~/.config/ghostty ] && rm -r ~/.config/ghostty
+ln -sfn "$DOTFILES/config/ghostty" ~/.config/ghostty
 
 # Zed
 mkdir -p ~/.config/zed
