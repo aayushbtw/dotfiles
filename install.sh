@@ -23,3 +23,7 @@ ln -sfn "$DOTFILES/config/ghostty" ~/.config/ghostty
 mkdir -p ~/.config/zed
 ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json
 ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
+
+# Claude
+ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
+ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
