@@ -2,9 +2,8 @@
 
 DOTFILES="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 
-[ -d ~/.config ] || mkdir ~/.config
-
-# Zsh (.zshenv in home to set ZDOTDIR)
+# ~/.config
+# Zsh
 mkdir -p ~/.config/zsh
 ln -sf "$DOTFILES/config/zsh/.zshenv" ~/.zshenv
 ln -sf "$DOTFILES/config/zsh/.zshrc" ~/.config/zsh/.zshrc
@@ -24,12 +23,17 @@ mkdir -p ~/.config/zed
 ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json
 ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
 
+
+# ~/.claude
+# Claude Code
+mkdir -p ~/.claude
+ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
+ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+
+
+# ~/Library/Application Support/Code/User
 # VS Code
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_DIR"
 ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"
 ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_DIR/keybindings.json"
-
-# Claude
-ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
-ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
