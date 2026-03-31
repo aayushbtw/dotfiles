@@ -6,13 +6,13 @@
     "GitHub Dark": {
       "syntax": {
         "comment": {
-          "font_style": "italic",
+          "font_style": "italic"
         },
         "comment.doc": {
-          "font_style": "italic",
-        },
-      },
-    },
+          "font_style": "italic"
+        }
+      }
+    }
   },
 
   // Elements
@@ -20,19 +20,19 @@
     "show_onboarding_banner": false,
     "show_project_items": true,
     "show_branch_name": true,
-    "show_user_menu": true,
+    "show_user_menu": true
   },
   "tab_bar": {
     "show": true,
     "show_tab_bar_buttons": false,
-    "show_nav_history_buttons": false,
+    "show_nav_history_buttons": false
   },
   "toolbar": {
     "quick_actions": false,
-    "breadcrumbs": false,
+    "breadcrumbs": false
   },
   "status_bar": {
-    "experimental.show": false,
+    "experimental.show": false
   },
   "project_panel": {
     "dock": "right",
@@ -41,22 +41,22 @@
     "auto_fold_dirs": false,
     "starts_open": true,
     "scrollbar": {
-      "show": "never",
+      "show": "never"
     },
     "indent_guides": {
-      "show": "always",
-    },
+      "show": "always"
+    }
   },
   "file_finder": {
-    "modal_max_width": "large",
+    "modal_max_width": "large"
   },
   "scrollbar": {
-    "show": "never",
+    "show": "never"
   },
   "gutter": {
     "min_line_number_digits": 0,
     "folds": true,
-    "runnables": false,
+    "runnables": false
   },
 
   // Typography
@@ -74,7 +74,7 @@
     "ss08": true,
     "ss09": true,
     "ss10": true,
-    "liga": true,
+    "liga": true
   },
   "buffer_line_height": "comfortable",
   "buffer_font_size": 13.5,
@@ -91,7 +91,7 @@
     "ss08": true,
     "ss09": true,
     "ss10": true,
-    "liga": true,
+    "liga": true
   },
   "agent_ui_font_size": 15,
   "agent_buffer_font_size": 13.5,
@@ -100,7 +100,7 @@
   "multi_cursor_modifier": "cmd_or_ctrl",
   "cursor_blink": false,
   "drag_and_drop_selection": {
-    "enabled": false,
+    "enabled": false
   },
   "show_whitespaces": "none",
   "tab_size": 2,
@@ -113,8 +113,8 @@
   "agent_servers": {
     "claude": {
       "default_config_options": {
-        "model": "opus",
-      },
-    },
-  },
+        "model": "opus"
+      }
+    }
+  }
 }

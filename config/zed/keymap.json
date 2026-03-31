@@ -2,7 +2,7 @@
   {
     "bindings": {
       "cmd-k": "project_panel::Toggle",
-      "cmd-l": "agent::Toggle",
-    },
-  },
+      "cmd-l": "agent::Toggle"
+    }
+  }
 ]
