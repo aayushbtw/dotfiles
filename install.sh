@@ -24,6 +24,12 @@ mkdir -p ~/.config/zed
 ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json
 ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
 
+# VS Code
+VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+mkdir -p "$VSCODE_DIR"
+ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"
+ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_DIR/keybindings.json"
+
 # Claude
 ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
 ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md

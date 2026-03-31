@@ -1,0 +1,14 @@
+[
+  {
+    "key": "cmd+shift+e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.view.explorer",
+        "timeline.removeView",
+        "outline.removeView",
+        "workbench.explorer.openEditorsView.removeView"
+      ]
+    }
+  }
+]
