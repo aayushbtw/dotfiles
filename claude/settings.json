@@ -1,5 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(git add *)",
@@ -7,13 +11,15 @@
       "Bash(git reset *)",
       "Bash(git -C *)"
     ],
-    "ask": ["Bash(git push *)"],
-    "deny": ["Read(./.env)", "Read(./.env.*)", "Read(./build)"]
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./build)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ]
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "effortLevel": "medium",
-  "model": "opus"
+  "model": "opus",
+  "effortLevel": "medium"
 }
