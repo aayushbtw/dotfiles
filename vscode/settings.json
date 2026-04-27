@@ -33,5 +33,7 @@
     "https://schemastore.azurewebsites.net/": true,
     "https://ui.shadcn.com": true,
     "https://www.schemastore.org/": true
-  }
+  },
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
