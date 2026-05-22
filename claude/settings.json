@@ -9,16 +9,12 @@
       "Bash(git add *)",
       "Bash(git diff *)",
       "Bash(git reset *)",
-      "Bash(git -C *)"
+      "Bash(git -C *)",
+      "Bash(fd *)",
+      "Bash(rg *)"
     ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./build)"
-    ],
-    "ask": [
-      "Bash(git push *)"
-    ]
+    "deny": ["Read(./.env)", "Read(./.env.prod)", "Read(./build)"],
+    "ask": ["Bash(git push *)"]
   },
   "model": "opus",
   "effortLevel": "medium",
