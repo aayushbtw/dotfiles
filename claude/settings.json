@@ -13,7 +13,7 @@
       "Bash(fd *)",
       "Bash(rg *)"
     ],
-    "deny": ["Read(./.env)", "Read(./.env.prod)", "Read(./build)"],
+    "deny": ["Read(./.env.prod)", "Read(./build)"],
     "ask": ["Bash(git push *)"]
   },
   "model": "opus",
