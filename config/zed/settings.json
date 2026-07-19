@@ -1,6 +1,16 @@
 {
   // UI
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "agent": {
+    "dock": "right",
     "favorite_models": [],
     "single_file_review": false,
     "model_parameters": []
