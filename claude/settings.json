@@ -13,10 +13,16 @@
       "Bash(fd *)",
       "Bash(rg *)"
     ],
-    "deny": ["Read(./.env.prod)", "Read(./build)"],
-    "ask": ["Bash(git push *)"]
+    "deny": [
+      "Read(./.env.prod)",
+      "Read(./build)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ]
   },
   "model": "opus",
   "effortLevel": "medium",
+  "cleanupPeriodDays": 400,
   "theme": "dark-daltonized"
 }
