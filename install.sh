@@ -19,6 +19,10 @@ ln -sf "$DOTFILES/config/starship.toml" ~/.config/starship.toml
 [ -d ~/.config/ghostty ] && [ ! -L ~/.config/ghostty ] && rm -r ~/.config/ghostty
 ln -sfn "$DOTFILES/config/ghostty" ~/.config/ghostty
 
+# Git
+mkdir -p ~/.config/git
+ln -sf "$DOTFILES/config/git/ignore" ~/.config/git/ignore
+
 # Zed
 mkdir -p ~/.config/zed
 ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json

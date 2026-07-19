@@ -1,6 +1,7 @@
 # dotfiles
 
 - [Zsh](https://www.zsh.org/)
+- [Git](https://github.com)
 - [Zed](https://zed.dev)
 - [Ghostty](https://ghostty.org)
 - [Starship](https://starship.rs)
