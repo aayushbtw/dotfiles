@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 400,
   "attribution": {
     "commit": "",
     "pr": ""
@@ -22,7 +23,27 @@
     ]
   },
   "model": "opus",
+  "enabledPlugins": {
+    "cloudflare@cloudflare": false
+  },
+  "extraKnownMarketplaces": {
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      }
+    },
+    "tanstack-ai": {
+      "source": {
+        "source": "github",
+        "repo": "TanStack/ai"
+      }
+    }
+  },
   "effortLevel": "medium",
-  "cleanupPeriodDays": 400,
-  "theme": "dark-daltonized"
+  "tui": "fullscreen",
+  "theme": "dark-daltonized",
+  "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
