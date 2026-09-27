@@ -36,5 +36,6 @@
     "https://www.schemastore.org/": true
   },
   "js/ts.updateImportsOnFileMove.enabled": "always",
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "claudeCode.hideOnboarding": true
 }
