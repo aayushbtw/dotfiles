@@ -8,9 +8,6 @@ mkdir -p ~/.config/zsh
 ln -sf "$DOTFILES/config/zsh/.zshenv" ~/.zshenv
 ln -sf "$DOTFILES/config/zsh/.zprofile" ~/.config/zsh/.zprofile
 ln -sf "$DOTFILES/config/zsh/.zshrc" ~/.config/zsh/.zshrc
-ln -sf "$DOTFILES/config/zsh/utils.zsh" ~/.config/zsh/utils.zsh
-ln -sf "$DOTFILES/config/zsh/aliases.zsh" ~/.config/zsh/aliases.zsh
-ln -sf "$DOTFILES/config/zsh/apps.zsh" ~/.config/zsh/apps.zsh
 
 # Starship
 ln -sf "$DOTFILES/config/starship.toml" ~/.config/starship.toml
