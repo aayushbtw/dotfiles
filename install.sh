@@ -6,6 +6,8 @@ DOTFILES="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 # Zsh
 mkdir -p ~/.config/zsh
 ln -sf "$DOTFILES/config/zsh/.zshenv" ~/.zshenv
+# Shells started from a shell inherit ZDOTDIR and read .zshenv from there.
+ln -sf "$DOTFILES/config/zsh/.zshenv" ~/.config/zsh/.zshenv
 ln -sf "$DOTFILES/config/zsh/.zprofile" ~/.config/zsh/.zprofile
 ln -sf "$DOTFILES/config/zsh/.zshrc" ~/.config/zsh/.zshrc
 

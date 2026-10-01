@@ -1,5 +1,3 @@
-export HOMEBREW_NO_ENV_HINTS=1
-
 # Aliases
 alias c='code .'
 alias o='open .'
