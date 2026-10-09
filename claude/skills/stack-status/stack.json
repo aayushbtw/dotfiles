@@ -1,0 +1,96 @@
+{
+  "repos": {
+    "portfolio": {
+      "path": "~/Projects/portfolio",
+      "kind": "app, Cloudflare"
+    },
+    "tomekit": {
+      "path": "~/Projects/tomekit",
+      "kind": "npm library + apps/docs (TanStack Start, Cloudflare) + apps/bench"
+    },
+    "constella": {
+      "path": "~/Projects/constella",
+      "kind": "apps/site (Cloudflare) + packages/ui (shadcn registry)"
+    },
+    "netigen-v2": {
+      "path": "~/netision/netigen-v2",
+      "kind": "company app, Nitro (no Cloudflare). Conventions only, never a dependency on a personal package."
+    }
+  },
+  "packages": {
+    "vite-plus": "1.1.0",
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.1.0",
+    "ultracite": "7.12.4",
+    "typescript": "7.0.2",
+    "@types/node": "26.6.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@tanstack/react-start": "1.168.60",
+    "@tanstack/react-router": "1.170.41",
+    "@tanstack/react-query": "5.104.1",
+    "@tanstack/highlight": "1.0.0",
+    "@tanstack/markdown": "1.0.0",
+    "@tanstack/intent": "0.5.5",
+    "@stylexjs/stylex": "0.19.1",
+    "@stylexjs/unplugin": "0.19.1",
+    "@vitejs/plugin-react": "6.1.2",
+    "@base-ui/react": "1.8.0",
+    "@cloudflare/vite-plugin": "2.0.0-beta.sha-52b0dc0e9",
+    "cf": "1.0.0-beta.12",
+    "zod": "4.6.5"
+  },
+  "pnpm": "12.4.2",
+  "forbidden": {
+    "@biomejs/biome": "lint/format is ultracite on oxc via vite-plus",
+    "eslint": "lint is oxlint via vite-plus",
+    "prettier": "format is oxfmt via vite-plus",
+    "wrangler": "Cloudflare apps use cf",
+    "tailwindcss": "styling is StyleX"
+  },
+  "files": {
+    ".vscode/settings.json": "files/vscode-settings.json",
+    ".vscode/extensions.json": "files/vscode-extensions.json"
+  },
+  "viteConfig": [
+    "ultracite/oxfmt",
+    "ultracite/oxlint/core",
+    "ultracite/oxlint/react",
+    "ultracite/oxlint/tanstack",
+    "ultracite/oxlint/anti-slop",
+    "vite-plus/oxlint-plugin",
+    "typeAware: true",
+    "\"func-style\"",
+    "\"no-use-before-define\"",
+    "\"react/function-component-definition\"",
+    "\"jsx-a11y/label-has-associated-control\"",
+    "\"typescript/only-throw-error\"",
+    "\"vite-plus/prefer-vite-plus-imports\""
+  ],
+  "scripts": {
+    "check": "vp check",
+    "fix": "vp check --fix"
+  },
+  "exceptions": {
+    "netigen-v2": {
+      "typescript": "effect-tsgo patches TS 6 (see `prepare` script); TS 7 comes from @typescript/native",
+      "vite-plus": "1.1.0 bundles oxlint 1.87; @effect/tsgo 0.48.1 patches oxlint ≤1.86 only. Bump when tsgo supports 1.87",
+      "vite": "tied to vite-plus (see above)",
+      "ultracite": "7.12.4 configures rules only oxlint 1.87 has; tied to vite-plus (see above)",
+      "files:.vscode/settings.json": "tsdk points at @typescript/native/bin; node_modules/typescript is the patched TS 6"
+    }
+  },
+  "cloudflareConfig": [
+    "from \"cf/config\"",
+    "compatibilityDate: \"2026-09-16\"",
+    "\"nodejs_compat\"",
+    "previewUrls: false",
+    "workersDev: false",
+    "traces: { enabled: false }"
+  ],
+  "global": [
+    "vite-plus",
+    "cf"
+  ]
+}

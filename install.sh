@@ -28,6 +28,15 @@ ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json
 ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
 
 
+# ~/.claude
+# Claude Code. Team commands, agents and skills come from orbit (its install.sh).
+mkdir -p ~/.claude/hooks ~/.claude/skills ~/.claude/usage
+ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
+ln -sfn "$DOTFILES/claude/hooks/usage" ~/.claude/hooks/usage
+ln -sfn "$DOTFILES/claude/skills/stack-status" ~/.claude/skills/stack-status
+
+
 # ~/Library/Application Support/Code/User
 # VS Code
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
