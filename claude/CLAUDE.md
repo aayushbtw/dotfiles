@@ -39,8 +39,6 @@ Every tool call re-sends the whole context, so the number of turns drives usage.
 4. Check a library's skill or docs before reading `node_modules/**/dist`.
 5. A tool fails twice in a row → stop retrying it blindly. Find the cause or switch to another way to get the same result, then carry on.
 
-@~/.claude/orbit/rules.md
-
 ## Cloudflare CLI - cf - v20260928
 
 `cf` is Cloudflare's current CLI and covers the whole Cloudflare platform. Prefer it over Wrangler: create projects with `cf init`, develop with `cf dev`, deploy with `cf deploy`, and manage account resources with `cf <product> …` (for example `cf d1 list`).

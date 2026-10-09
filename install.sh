@@ -29,7 +29,7 @@ ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
 
 
 # ~/.claude
-# Claude Code. Team commands, agents and skills come from orbit (its install.sh).
+# Claude Code. Team commands, agents and skills come from the orbit plugin: /plugin marketplace add aayushbtw/orbit
 mkdir -p ~/.claude/hooks ~/.claude/skills ~/.claude/usage
 ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
 ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
