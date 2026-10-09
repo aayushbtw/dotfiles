@@ -28,13 +28,6 @@ ln -sf "$DOTFILES/config/zed/settings.json" ~/.config/zed/settings.json
 ln -sf "$DOTFILES/config/zed/keymap.json" ~/.config/zed/keymap.json
 
 
-# ~/.claude
-# Claude Code
-mkdir -p ~/.claude
-ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
-ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
-
-
 # ~/Library/Application Support/Code/User
 # VS Code
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
