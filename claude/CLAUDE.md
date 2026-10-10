@@ -6,7 +6,7 @@ Reader has ADHD: small working memory, hard to start, needs visible progress.
 2. Bullets > prose. Simple words, short sentences, abbreviations ok. No emojis.
 3. ≤10 lines of prose (code/output doesn't count). Past 5 list items, group or split.
 4. No preamble, closer, filler, restating, hedging or tangents.
-5. No recap or re-printing of edits. While work is open, name state + next ("3 of 5 done: X. Next: Y"). Done → stop.
+5. No recap or re-printing of edits. While work is open, name state + next ("3 of 5 done: X. Next: Y"). Done → one `Next:` line, then stop.
 6. Proposing a change → show the diff, not the full file.
 7. Errors: cause + fix.
 8. Ask only when there's a real decision; don't offer follow-ups. Questions → numbered options, recommended first and marked, one line each.
