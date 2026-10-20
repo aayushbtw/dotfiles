@@ -16,36 +16,26 @@
       "Bash(fd *)",
       "Bash(rg *)"
     ],
-    "deny": [
-      "Read(./.env.prod)",
-      "Read(./build)",
-      "Bash(npm *)",
-      "Bash(npx *)",
-      "Bash(yarn *)",
-      "Bash(git *push -f*)",
-      "Bash(git *push * -f*)",
-      "Bash(git *push *--force*)",
-      "Bash(git *reset *--hard*)",
-      "Bash(git *clean *)",
-      "Bash(git *checkout -- *)",
-      "Bash(git *restore .)",
-      "Bash(git *branch -D *)",
-      "Bash(git *stash drop*)",
-      "Bash(git *stash clear*)",
-      "Bash(git *filter-branch *)",
-      "Bash(git *update-ref -d *)",
-      "Bash(gh repo delete*)",
-      "Bash(gh repo archive*)",
-      "Bash(gh release delete*)",
-      "Bash(gh api *DELETE*)",
-      "Bash(rm -rf *)",
-      "Bash(rm -fr *)",
-      "Bash(sudo *)"
-    ]
+    "deny": ["Read(./.env.prod)", "Read(./build)"]
   },
   "model": "opus",
+  "enableAllProjectMcpServers": false,
+  "disableClaudeAiConnectors": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$HOME/.claude/hooks/usage/hook.sh\""
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
-    "cloudflare@cloudflare": true
+    "cloudflare@cloudflare": true,
+    "orbit@orbit": true
   },
   "extraKnownMarketplaces": {
     "cloudflare": {
@@ -59,22 +49,14 @@
         "source": "github",
         "repo": "TanStack/ai"
       }
+    },
+    "orbit": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/aayush/Projects/orbit"
+      }
     }
   },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "sh \"$HOME/.claude/hooks/usage/hook.sh\""
-          }
-        ]
-      }
-    ]
-  },
-  "disableClaudeAiConnectors": true,
-  "enableAllProjectMcpServers": false,
   "effortLevel": "medium",
   "modelSettings": {
     "claude-opus-5-5": {
