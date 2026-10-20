@@ -31,13 +31,12 @@ lookup() {
   fi
 }
 
-# Kills JS dev servers (Next, Vite/SvelteKit/TanStack, Nuxt, Turbo, Convex) and
-# their package-manager wrappers. `killdev -n` lists without killing.
+# `killdev -n` lists without killing.
 killdev() {
   emulate -L zsh
   local dry=0 pid cmd
   [[ $1 == -n ]] && dry=1
-  local pattern='next( dev| start|-server|/dist/server)|(^|/)vite(\.js)?( |$)|nuxi|nuxt( dev|/)|svelte-kit|vinxi|tanstack|turbo( run)? dev|tsx watch|convex dev|(pnpm|npm|yarn|bun)(\.c?js)? (run )?(dev|db|start)( |$)'
+  local pattern='next( dev| start|-server|/dist/server)|(^|/)vite(\.js)?( |$)|nuxi|nuxt( dev|/)|svelte-kit|vinxi|tanstack|vite-plus-core/dist/vite/node/cli\.js (dev|preview)|vite-plus/dist/bin\.js (run )?dev( |$)|(^|/)vpr? (run )?dev( |$)|turbo( run)? dev|tsx watch|convex dev|(pnpm|npm|yarn|bun)(\.c?js)? (run )?(dev|db|start)( |$)'
   local -a pids
 
   ps -Ao pid=,command= | while read -r pid cmd; do
