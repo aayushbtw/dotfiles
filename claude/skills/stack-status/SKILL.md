@@ -1,6 +1,6 @@
 ---
 name: stack-status
-description: Check whether the user's projects (portfolio, tomekit, constella, type, netigen-v2) are on the shared stack before working in one, and record changes so others don't fall behind. Use at the start of work in any of those repos, when upgrading a dependency or changing lint/format/tooling config in one, or when asked about stack drift, sync, or migrations.
+description: Check whether the user's projects (portfolio, tomekit, constella, type, netigen-v2, octo) are on the shared stack before working in one, and record changes so others don't fall behind. Use at the start of work in any of those repos, when upgrading a dependency or changing lint/format/tooling config in one, or when asked about stack drift, sync, or migrations.
 ---
 
 Source of truth: this folder, `~/.claude/skills/stack-status/`.

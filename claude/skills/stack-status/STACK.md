@@ -45,15 +45,18 @@ lint: {
 
 ## Migration log
 
-| # | Change | portfolio | tomekit | constella | type | netigen-v2 |
-|---|---|---|---|---|---|---|
-| 001 | portfolio: hand-rolled fmt + vendored anti-slop → ultracite presets | committed | — | — | — | — |
-| 002 | vite-plus 1.1.0, ultracite 7.12.4, shared lint rules, canonical .vscode | done | done | done | paused | PR #208 (vite-plus/ultracite held, see exceptions) |
-| 003 | tomekit/apps/docs deps: highlight/markdown 1.0, CF plugin 2.0 beta, cf beta.12 | — | done | — | — | — |
-| 004 | type: vite → vite-plus, Biome → ultracite on oxc, TS 7, wrangler → cf (`cf migrate`) | — | — | — | paused | — |
-| 005 | type: Tailwind → StyleX (separate; rewrites every component) | — | — | — | paused | — |
-| 006 | cloudflare.config.ts: compat date 2026-09-16, logs-scoped observability + traces off, previewUrls/workersDev false | done | done | done | paused | — |
-| 007 | `func-style` → `allowArrowFunctions: true` (StyleX helpers must be arrows; constella dropped 9 `eslint-disable func-style` pairs). Keep the line: deleting it restores ultracite's `"expression"`, which bans `function Button()` | done | done | done | paused | PR #208 (355 arrow components autofixed via `vp lint --fix-suggestions`) |
+| # | Change | portfolio | tomekit | constella | type | netigen-v2 | octo |
+|---|---|---|---|---|---|---|---|
+| 001 | portfolio: hand-rolled fmt + vendored anti-slop → ultracite presets | committed | — | — | — | — | — |
+| 002 | vite-plus 1.1.0, ultracite 7.12.4, shared lint rules, canonical .vscode | done | done | done | paused | PR #208 (vite-plus/ultracite held, see exceptions) | — |
+| 003 | tomekit/apps/docs deps: highlight/markdown 1.0, CF plugin 2.0 beta, cf beta.12 | — | done | — | — | — | — |
+| 004 | type: vite → vite-plus, Biome → ultracite on oxc, TS 7, wrangler → cf (`cf migrate`) | — | — | — | paused | — | — |
+| 005 | type: Tailwind → StyleX (separate; rewrites every component) | — | — | — | paused | — | — |
+| 006 | cloudflare.config.ts: compat date 2026-09-16, logs-scoped observability + traces off, previewUrls/workersDev false | done | done | done | paused | — | — |
+| 007 | `func-style` → `allowArrowFunctions: true` (StyleX helpers must be arrows; constella dropped 9 `eslint-disable func-style` pairs). Keep the line: deleting it restores ultracite's `"expression"`, which bans `function Button()` | done | done | done | paused | PR #208 (355 arrow components autofixed via `vp lint --fix-suggestions`) | — |
+| 008 | TanStack Start 1.169.2 (first stable), router 1.170.44. No code changes: no repo used `useSession`, `.inputValidator()`, nitro-v2 plugin or a custom server entry. Vite 8 already via vite-plus | done | done | done | — | branch `chore/tanstack-start-1.169` | — |
+| 009 | Trial: cf + Workers Builds → Void 1.1.11 direct-to-Cloudflare, deployed by a GitHub Action. Void hardcodes the TanStack Start entry, so a custom `src/server.ts` is dropped (tomekit lost `Accept: text/markdown`). Roll out only if the trial holds | todo | done, deploying from CI (no-bindings deploy bug: voidzero-dev/void#457) | todo | — | — | done; rate limit never 429s on Void (open) |
+| 010 | octo joins the stack: wrangler → vite-plus 1.1.0, ultracite 7.12.4, TS 7, canonical .vscode, Void 1.1.11 (`src/index.ts` Hono app → `routes/` + `middleware/`) | — | — | — | — | — | done; rate limit never 429s on Void (open) |
 
 `done` = pushed to main (2026-10-08). `paused` = type is out of `stack.json` until the user picks it back up; re-add it to `repos` to resume.
 
@@ -63,6 +66,7 @@ Open items:
   - Pre-existing: reproduced on 445e3ab (before the sync, vite-plus 1.0.0, vitest 5.0.1). Not caused by vite-plus 1.1.0 / vitest 5.0.3.
   - Repro: `cd packages/tomekit && for i in 1 2 3; do vp test run test/vite.test.ts | rg "Tests "; done`
   - Likely cause: timing between fs writes and the watcher/HMR assertions (all failing tests mutate files and wait for a reload).
+- tomekit `apps/docs` deploys with Void (trial, migration 009), so `void.config.ts` replaces `cloudflare.config.ts` and Void bundles its own `@cloudflare/vite-plugin` (^1.64). A direct 2.0 beta would clash.
 - portfolio dropped 3 vendored rules ultracite doesn't ship: `no-array-filter-map`, `no-reduce-accumulator-copy`, `require-readable-spacing`.
 - vite-plus 1.1.0 was <24h old: pnpm wrote `minimumReleaseAgeExclude` entries (kept by user choice). Pinned ones the lockfile has moved past show up in status.ts as stale; delete them then.
 
@@ -84,3 +88,9 @@ Open items:
 - Inline disables use `// oxlint-disable-next-line <rule> -- <why>`.
 - `vp lint` output: one `path:line:col: error rule(name): msg` per line. Count by rule with `rg -o '[a-z-]+\([a-z0-9/_-]+\):'`.
 - tomekit `packages/tomekit/test/vite.test.ts` file-watcher tests are flaky (1–4 random failures per run), already on the pre-sync commit with vite-plus 1.0.0. Not a stack regression; don't chase it during a migration.
+- Void bundles its own `hono`. An app on a different `hono` gets two copies and `instanceof HTTPException` fails; match the app's `hono` to Void's.
+- Void has no `onError`/`notFound` hook: errors and unmatched routes come back as Hono's plain text. Rewrite them in the first `middleware/` file after `await next()` (octo `middleware/00.errors.ts`).
+- `void init --github` without a TTY fails with "No Void platform connected" unless `.void/project.json` has `{"platform":"cloudflare"}`. It also adds `.claude/skills` symlinks and duplicate `.gitignore` lines; drop them.
+- `void deploy` in CI with a scoped token fails with "Cloudflare authentication is required": with no pinned account it runs `wrangler whoami`, which can't list accounts. Pin `cloudflare.account_id` in `void.config.ts`.
+- `void migrate` copies `main` and `$schema` from wrangler.jsonc into `void.config.ts`; delete both (Void owns the entry).
+- ultracite autofix rewrites `getAttribute("data-x")` → `dataset.x`, which node-html-parser elements lack. Turn off `unicorn/prefer-dom-node-dataset` there.
