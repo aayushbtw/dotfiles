@@ -35,6 +35,7 @@ ln -sf "$DOTFILES/claude/CLAUDE.md" ~/.claude/CLAUDE.md
 ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
 ln -sfn "$DOTFILES/claude/hooks/usage" ~/.claude/hooks/usage
 ln -sfn "$DOTFILES/claude/skills/stack-status" ~/.claude/skills/stack-status
+ln -sfn "$DOTFILES/claude/skills/cloudflare-cli" ~/.claude/skills/cloudflare-cli
 
 
 # ~/Library/Application Support/Code/User

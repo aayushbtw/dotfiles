@@ -16,7 +16,10 @@
       "Bash(fd *)",
       "Bash(rg *)"
     ],
-    "deny": ["Read(./.env.prod)", "Read(./build)"]
+    "deny": [
+      "Read(./.env.prod)",
+      "Read(./build)"
+    ]
   },
   "model": "opus",
   "enableAllProjectMcpServers": false,
@@ -34,8 +37,26 @@
     ]
   },
   "enabledPlugins": {
-    "cloudflare@cloudflare": true,
+    "cloudflare@cloudflare": false,
     "orbit@orbit": true
+  },
+  "skillOverrides": {
+    "cloudflare-cli": "off",
+    "anthropic-skills:built-in-browser": "off",
+    "anthropic-skills:chrome-browser": "off",
+    "anthropic-skills:computer-use": "off",
+    "anthropic-skills:deep-research": "off",
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:docx": "off",
+    "anthropic-skills:frontend-design": "off",
+    "anthropic-skills:google-workspace": "off",
+    "anthropic-skills:import-memory": "off",
+    "anthropic-skills:morning": "off",
+    "anthropic-skills:pdf": "off",
+    "anthropic-skills:pptx": "off",
+    "anthropic-skills:setup-writing-style": "off",
+    "anthropic-skills:skill-creator": "off",
+    "anthropic-skills:xlsx": "off"
   },
   "extraKnownMarketplaces": {
     "cloudflare": {

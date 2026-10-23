@@ -39,10 +39,10 @@ Every tool call re-sends the whole context, so the number of turns drives usage.
 4. Check a library's skill or docs before reading `node_modules/**/dist`.
 5. A tool fails twice in a row → stop retrying it blindly. Find the cause or switch to another way to get the same result, then carry on.
 
-## Cloudflare CLI - cf - v20260928
+# Opt-in tooling
 
-`cf` is Cloudflare's current CLI and covers the whole Cloudflare platform. Prefer it over Wrangler: create projects with `cf init`, develop with `cf dev`, deploy with `cf deploy`, and manage account resources with `cf <product> …` (for example `cf d1 list`).
+These are off in `~/.claude/settings.json` (`enabledPlugins`, `skillOverrides`). A project turns on what it uses in its `.claude/settings.local.json`:
 
-Wrangler is only for projects that already use it – a `wrangler.jsonc`, `wrangler.json` or `wrangler.toml` file – or when the user asks for it. Keep using Wrangler in those projects unless asked to migrate, and use `cf migrate` in this case.
-
-`cf` commands differ from Wrangler's; check `cf --help` or `cf cli search <what you want to do>` instead of guessing. If a `cf` command fails in a project that doesn't use Wrangler, don't fall back to Wrangler (including `npx wrangler`) without offering to report it.
+- Cloudflare: `"enabledPlugins": { "cloudflare@cloudflare": true }` and `"skillOverrides": { "cloudflare-cli": "on" }`. A new Cloudflare project starts with `cf init`, then opts in.
+- claude.ai skills: `"skillOverrides": { "anthropic-skills:<name>": "on" }`. A new folder in `~/.claude/skills/synced/*/` needs an `"off"` row in the user settings, or it loads everywhere.
+- Paper MCP: `claude mcp add -s local paper -- ~/.paper/bin/paper mcp`.
