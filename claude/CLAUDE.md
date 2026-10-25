@@ -45,5 +45,5 @@ These are off in `~/.claude/settings.json` (`enabledPlugins`, `skillOverrides`).
 
 - Cloudflare: `"enabledPlugins": { "cloudflare@cloudflare": true }` and `"skillOverrides": { "cloudflare-cli": "on" }`. A new Cloudflare project starts with `cf init`, then opts in.
 - claude.ai skills: `"skillOverrides": { "anthropic-skills:<name>": "on" }`. A new folder in `~/.claude/skills/synced/*/` needs an `"off"` row in the user settings, or it loads everywhere.
-- Global skills (`npx skills add`, in `~/.agents/skills/`): `"skillOverrides": { "<name>": "on" }`. A newly added one needs an `"off"` row in the user settings, or it loads everywhere.
+- Third-party skills: `npx skills add` inside the project, never `-g`. The repo vendors them in `.agents/skills/` with `skills-lock.json`, so worktrees and clones get them.
 - Paper MCP: `claude mcp add -s local paper -- ~/.paper/bin/paper mcp`.
