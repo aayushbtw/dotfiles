@@ -24,22 +24,6 @@
   "model": "opus",
   "enableAllProjectMcpServers": false,
   "disableClaudeAiConnectors": true,
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "sh \"$HOME/.claude/hooks/usage/hook.sh\""
-          }
-        ]
-      }
-    ]
-  },
-  "enabledPlugins": {
-    "cloudflare@cloudflare": false,
-    "orbit@orbit": true
-  },
   "skillOverrides": {
     "cloudflare-cli": "off",
     "anthropic-skills:built-in-browser": "off",
@@ -57,6 +41,28 @@
     "anthropic-skills:setup-writing-style": "off",
     "anthropic-skills:skill-creator": "off",
     "anthropic-skills:xlsx": "off"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$HOME/.claude/hooks/usage/hook.sh\""
+          },
+          {
+            "type": "command",
+            "command": "sh \"$HOME/.claude/hooks/orbit-sync/hook.sh\" >/dev/null 2>&1 || true",
+            "async": true,
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "cloudflare@cloudflare": false,
+    "orbit@orbit": true
   },
   "extraKnownMarketplaces": {
     "cloudflare": {
